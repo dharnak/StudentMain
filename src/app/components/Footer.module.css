@@ -1,0 +1,14 @@
+.foot {
+  position: fixed;       /* Always stays at bottom of screen */
+  bottom: 0;             /* Align to bottom */
+  left: 0;               /* Align to left edge */
+  width: 100%;           /* Full width */
+  background-color: rgb(2, 46, 32);
+  color: white;
+  text-align: center;
+  height: 80px;
+  padding: 0.75rem 0;
+  border-top: 1px solid #ccc;
+  font-size: 0.9rem;
+  z-index: 1000;         /* On top of everything else */
+}
