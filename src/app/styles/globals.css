@@ -1,0 +1,12 @@
+
+
+html, body, #__next {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, Roboto, -apple-system, "Segoe UI", "Helvetica Neue", Arial;
+}
+body {
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
