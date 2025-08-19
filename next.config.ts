@@ -1,15 +1,20 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  reactStrictMode: true,  // Helps catch potential React issues
+  reactStrictMode: true,
   images: {
-    domains: ["images.unsplash.com"], // Allow external images from Unsplash
+    domains: ["images.unsplash.com"],
   },
-  eslint: {
-    ignoreDuringBuilds: true, // Prevents ESLint errors from breaking Vercel builds
+  publicRuntimeConfig: {
+    API_URL: "http://localhost:5000", 
   },
-  typescript: {
-    ignoreBuildErrors: true, // Prevents TS errors from blocking production build
+  redirects:async ()=>{
+    return[{
+      source:'/other',
+      destination:'/',
+      permanent:false,
+    },
+  ]
   },
 };
 

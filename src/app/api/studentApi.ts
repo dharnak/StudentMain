@@ -17,7 +17,7 @@ export const studentApi = createApi({
   reducerPath: 'studentApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:5000/' }),
   endpoints: (builder) => ({
-    postStudent: builder.mutation<Student, Partial<Student>>({
+    postStudent: builder.mutation<Student,Partial<Student>>({
       query: (studentData) => ({
         url: 'postData',
         method: 'POST',
