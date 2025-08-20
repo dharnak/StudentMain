@@ -2,6 +2,8 @@
 
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
+console.log("API URL:", process.env.NEXT_PUBLIC_API_URL)
+
 interface Student {
   firstname: string
   lastname: string
@@ -15,11 +17,11 @@ interface Student {
 }
 export const studentApi = createApi({
   reducerPath: 'studentApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:5000/' }),
+  baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_API_URL }),
   endpoints: (builder) => ({
     postStudent: builder.mutation<Student,Partial<Student>>({
       query: (studentData) => ({
-        url: 'postData',
+        url: '/postData',
         method: 'POST',
         body: studentData,
       }),
