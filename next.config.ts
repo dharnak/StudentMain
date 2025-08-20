@@ -11,9 +11,6 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  publicRuntimeConfig: {
-    API_URL: "http://localhost:5000", 
-  },
   redirects:async ()=>{
     return[{
       source:'/other',

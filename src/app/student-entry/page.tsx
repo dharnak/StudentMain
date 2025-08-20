@@ -58,7 +58,7 @@ const StudentEntry = () => {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     postStudent(formData)
       .unwrap()
@@ -80,12 +80,14 @@ const StudentEntry = () => {
         })
       })
       .catch((err) => {
-        console.error('Submission failed:', err)
+        console.error('Submission failed:', err?.data || err?.error || err)
         setSeverity('error')
         setMessage('Error saving data.')
         setOpen(true)
       })
   }
+
+
 
   return (
     <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4, mb: 25 }}>
